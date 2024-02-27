@@ -3,7 +3,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useToast } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
-
+import { Button } from "@chakra-ui/react";
 const GameScreen = () => {
 
     let [data, setData] = useState([])
@@ -68,9 +68,10 @@ const GameScreen = () => {
         {data.length > 0 ? 
          <> 
             <div>{data[currentIdx].text} (Year: {data[currentIdx].year})</div>
-            <button onClick={tryBefore}>Before</button>
-            <button onClick={tryAfter}>After</button>
+            <Button onClick={tryBefore}>Before</Button>
+            <Button onClick={tryAfter}>After</Button>
             <div>{data[currentIdx+1].text}</div>
+            <div>Score : {currentIdx}</div>
         </> : 
         <></>}
       </>
